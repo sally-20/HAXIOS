@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up Page</title>
+    <style>
+      /* Style the body with the background image */
+      body {
+        background-image: url("https://picsum.photos/id/94/1920/1080");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Style the form container */
+      .form-container {
+        border: 1px solid #ccc;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      /* Style the input fields */
+      input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      /* Style the submit button */
+      button[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      /* Add a clearfix to the form container */
+      .form-container::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      /* Add a top margin to the form headings */
+      h2 {
+        margin-top: 0;
+      }
+      
+      /* Style the sign up link */
+      .signup-link {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center><h2 style="color:#FFFDD0">Sign Up</h2></center>
+
+    <div class="form-container">
+      <form action="/signup" method="post">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <label for="password2"><b>Confirm Password</b></label>
+        <input type="password" placeholder="Confirm Password" name="password2" required>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <div class="signup-link">
+      <p style="color:#FFFDD0">Already have an account? <a href="E:\Lynda\College\HAXIOS\login.html" style="color:#FFFDD0">Login here</a></p>
+    </div>
+  </body>
+</html>
