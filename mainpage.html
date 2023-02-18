@@ -6,13 +6,22 @@
 	<style>
 		/* Style the topnav links */
 		.topnav {
-			background-color: #8F9779; /* Updated */
+			background-color: #8F9779; 
+			overflow: hidden;
+			position: relative;
 		}
-
+		.topnav img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 10px;
+			height: 50px;
+			width: 50px;
+		}
 		.topnav a {
 			float: left;
 			display: block;
-			color: white; /* Updated */
+			color: white; 
 			text-align: center;
 			padding: 14px 16px;
 			text-decoration: none;
@@ -32,8 +41,8 @@
 
 		/* Style the footer */
 		.footer {
-			background-color: black; /* Updated */
-			color: white; /* Updated */
+			background-color: black; 
+			color: white; 
 			padding: 10px;
 			display: flex;
 			justify-content: space-around;
@@ -44,7 +53,7 @@
 			display: block;
 			margin: 0 10px;
 			font-size: 24px;
-			color: white; /* Updated */
+			color: white; 
 			text-decoration: none;
 			transition: all 0.3s ease;
 		}
@@ -57,9 +66,11 @@
 <body>
 
 	<div class="topnav">
+		<img src="https://www.pngkey.com/png/detail/178-1780038_recycling-symbol-icon-noto-transparent-background-recyclable-logo.png" alt="Green" />
 		<a href="#">Home</a>
 		<a href="#">About</a>
 		<a href="#">Latest Trends</a>
+		<a href="#">Login</a>
 	</div>
 
 	<div class="content">
@@ -79,8 +90,7 @@
 		</a>
 		<a href="https://www.instagram.com/your_instagram_username/">
 			<i class="fa fa-instagram"></i>
-    </a>
-  </div>
+    		</a>
+  	</div>
 </body>
-
 </html>
