@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+      /* Style the body with the background image */
+      body {
+        background-image: url("https://picsum.photos/id/94/1920/1080");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Style the form container */
+      .form-container {
+        border: 1px solid #ccc;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 300px;
+        margin: auto; /* Center the container */
+      }
+
+      /* Style the input fields */
+      input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      /* Style the submit button */
+      button[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 48%;
+        display: inline-block;
+        margin-right: 2%;
+      }
+
+      /* Style the Login button */
+      button[type=button] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 48%;
+        display: inline-block;
+      }
+
+      /* Add styles for the Sign Up button on hover */
+      button[type=button]:hover {
+        background-color: #45a049;
+      }
+
+      /* Add a clearfix to the form container */
+      .form-container::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center><h2 style="color:#FFFDD0">Login</h2></center>
+
+    <div class="form-container">
+      <form action="/login" method="post">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <a href="#"><button type="submit">Login</button></a>
+        <a href="E:\Lynda\College\HAXIOS\signup.html"><button type="button">Sign Up</button></a>
+      </form>
+    </div>
+  </body>
+</html>
