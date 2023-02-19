@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Household Power Consumption Calculator</title>
+</head>
+<body>
+	<h1>Household Power Consumption Calculator</h1>
+  <form>
+    <label for="country">Types:</label>
+    <select id="country" name="lights">
+      <option value="India">India</option>
+      <option value="United_States_of_America">United States of America</option>
+      <option value="Mexico">Mexico</option>
+      <option value="Japan">Japan</option>
+      <option value="Australia">Australia</option>
+      <option value="Germany">Germany</option>
+      <option value="United_Kingdom">United Kingdom</option>
+      <option value="Mexico">Mexico</option>
+      <option value="Brazil">Brazil</option>
+    </select><br>
+    
+    <label for="fans">Fan:</label>
+    <input type="checkbox" id="fans" name="tv"><br>
+    <label for="no_of_fans">Quantity:</label>
+    <input type="number" id="no_of_fans" name="fans" value="0"><br>
+    <label for="fanstime">Time used per day:</label>
+    <input type="number" id="fanshours" name="fanshours" value="0" min="0" max="24"> hours
+    <input type="number" id="fansminutes" name="fansminutes" value="0" min="0" max="59"> minutes<br>
+  
+    <label for="lights">Light:</label>
+    <input type="checkbox" id="lights" name="acs"><br>
+    <label for="type_of_lights">Types:</label>
+    <select id="type_of_lights" name="lights">
+      <option value="LED">LED</option>
+      <option value="CFL">CFL</option>
+      <option value="Incandescent">Incandescent</option>
+    </select><br>
+    <label for="no_of_lights">Quantity:</label>
+    <input type="number" id="no_of_lights" name="no_of_lights" value="0"><br>
+    <label for="lighttime">Time used per day:</label>
+    <input type="number" id="lighthours" name="lighthours" value="0" min="0" max="24"> hours
+    <input type="number" id="lightminutes" name="lightminutes" value="0" min="0" max="59"> minutes<br>
+  
+    <label for="acs">Air conditioner:</label>
+    <input type="checkbox" id="acs" name="acs"><br>
+    <label for="no_of_acs">Quantity:</label>
+    <input type="number" id="no_of_acs" name="no_of_acs" value="0"><br>
+    <label for="acstime">Time used per day:</label>
+    <input type="number" id="acshours" name="acshours" value="0" min="0" max="24"> hours
+    <input type="number" id="acsminutes" name="acsminutes" value="0" min="0" max="59"> minutes<br>
+    
+    <label for="tv">TV:</label>
+    <input type="checkbox" id="tv" name="tv"><br>
+    <label for="tvtime">Time used per day:</label>
+    <input type="number" id="tvhours" name="tvhours" value="0" min="0" max="24"> hours
+    <input type="number" id="tvminutes" name="tvminutes" value="0" min="0" max="59"> minutes<br>
+
+    <label for="refrigerator">Refrigerator:</label>
+    <input type="checkbox" id="refrigerator" name="refrigerator"><br>
+    <label for="refrigeratortime">Time used per day:</label>
+    <input type="number" id="refrigeratorhours" name="refrigeratorhours" value="0" min="0" max="24"> hours
+    <input type="number" id="refrigeratorminutes" name="refrigeratorminutes" value="0" min="0" max="59"> minutes<br>
+
+    <label for="washingmachine">Washing machine:</label>
+    <input type="checkbox" id="washingmachine" name="washingmachine"><br>
+    <label for="washingmachinetime">Time used per day:</label>
+    <input type="number" id="washingmachinehours" name="washingmachinehours" value="0" min="0" max="24"> hours
+    <input type="number" id="washingmachineminutes" name="washingmachineminutes" value="0" min="0" max="59"> minutes<br>
+
+    <label for="microwave">Microwave:</label>
+    <input type="checkbox" id="microwave" name="microwave"><br>
+    <label for="microwavetime">Time used per day:</label>
+    <input type="number" id="microwavehours" name="microwavehours" value="0" min="0" max="24"> hours
+    <input type="number" id="microwaveminutes" name="microwaveminutes" value="0" min="0" max="59"> minutes<br>
+  
+    <input type="button" value="Calculate" onclick="calculate()">
+  </form>
+
+	<h2>Household Power Consumption</h2>
+	<p id="resultElement"></p>
+  <script>
+        function calculate() {
+          // Get values from the form
+          const fansChecked = document.getElementById("fans").checked;
+          const noOfFans = parseFloat(document.getElementById("no_of_fans").value);
+          const fansHours = parseFloat(document.getElementById("fanshours").value);
+          const fansMinutes = parseFloat(document.getElementById("fansminutes").value);
+
+          const lightsChecked = document.getElementById("lights").checked;
+          const typeOfLights = document.getElementById("type_of_lights").value; 
+          const noOfLights = parseFloat(document.getElementById("no_of_lights").value);
+          const lightsHours = parseFloat(document.getElementById("lighthours").value);
+          const lightsMinutes = parseFloat(document.getElementById("lightminutes").value);
+      
+          const acsChecked = document.getElementById("acs").checked;
+          const noOfAcs = parseFloat(document.getElementById("no_of_acs").value);
+          const acsHours = parseFloat(document.getElementById("acshours").value);
+          const acsMinutes = parseFloat(document.getElementById("acsminutes").value);
+
+          const tvChecked = document.getElementById("tv").checked;
+          const tvHours = parseFloat(document.getElementById("tvhours").value);
+          const tvMinutes = parseFloat(document.getElementById("tvminutes").value);
+
+          const refrigeratorChecked = document.getElementById("refrigerator").checked;
+          const refrigeratorHours = parseFloat(document.getElementById("refrigeratorhours").value);
+          const refrigeratorMinutes = parseFloat(document.getElementById("refrigeratorminutes").value);
+
+          const washingMachineChecked = document.getElementById("washingmachine").checked;
+          const washingMachineHours = parseFloat(document.getElementById("washingmachinehours").value);
+          const washingMachineMinutes = parseFloat(document.getElementById("washingmachineminutes").value);
+
+          const microwaveChecked = document.getElementById("microwave").checked;
+          const microwaveHours = parseFloat(document.getElementById("microwavehours").value);
+          const microwaveMinutes = parseFloat(document.getElementById("microwaveminutes").value);
+
+          // Calculate power consumption for each appliance
+          let fanPowerConsumption = 0;
+          if (fansChecked) {
+              fanPowerConsumption = noOfFans * 60 * (fansHours + fansMinutes / 60) * 80 / 1000;            
+          }
+
+          let lightPowerConsumption = 0;
+          if (lightsChecked) {
+              if (typeOfLights === "LED") {
+                  lightPowerConsumption = noOfLights * 60 * (lightsHours + lightsMinutes / 60) * 10 / 1000;
+              } else if (typeOfLights === "CFL") {
+                  lightPowerConsumption = noOfLights * 60 * (lightsHours + lightsMinutes / 60) * 20 / 1000;
+              } else if (typeOfLights === "Incandescent") {
+                  lightPowerConsumption = noOfLights * 60 * (lightsHours + lightsMinutes / 60) * 60 / 1000;
+              }
+          }
+
+          let acPowerConsumption = 0;
+          if (acsChecked) {
+              acPowerConsumption = noOfAcs * 60 * (acsHours + acsMinutes / 60) * 1500 / 1000;
+          }
+
+          let tvPowerConsumption = 0;
+          if (tvChecked) {
+              tvPowerConsumption = 60 * (tvHours + tvMinutes / 60) * 150 / 1000;
+          }
+
+          let refrigeratorPowerConsumption = 0;
+          if (refrigeratorChecked) {
+              refrigeratorPowerConsumption = 60 * (refrigeratorHours + refrigeratorMinutes / 60) * 120 / 1000;
+          }
+  
+          let washingMachinePowerConsumption = 0;
+          if (washingMachineChecked) {
+              washingMachinePowerConsumption = 60 * (washingMachineHours + washingMachineMinutes / 60) * 500 / 1000;
+          }
+  
+          let microwavePowerConsumption = 0;
+          if (microwaveChecked) {
+              microwavePowerConsumption = 60 * (microwaveHours + microwaveMinutes / 60) * 1200 / 1000;
+          }
+  
+          // Calculate total power consumption
+          const totalPowerConsumption = fanPowerConsumption + lightPowerConsumption + acPowerConsumption + tvPowerConsumption + refrigeratorPowerConsumption + washingMachinePowerConsumption + microwavePowerConsumption;
+          // Calculate total power consumption
+          const energyUsage = totalPower / 1000;
+  
+          // Display the result to the user
+          const resultElement = document.getElementById("result");
+          resultElement.textContent = 'Total power consumption is ${totalPowerConsumption.toFixed(2)} kWh.';
+          resultElement.textContent = 'Energy usage: ${energyUsage.toFixed(2)} kWh.';
+          return energyUsage;
+        }
+
+        function calculateElectricityCost(country, energyUsage) {
+          const countries = {"United States of America": 0.13, "Canada": 0.12, "exico": 0.09, "ndia": 0.10, "Japan": 0.26, "Australia": 0.33, Germany": 0.30, "United Kingdom": 0.21, "France": 0.18, "Brazil": 0.13};
+
+          if (!countries.hasOwnProperty(country)) {
+              return "Sorry, we don't have cost information for your country.";
+          }
+
+          const pricePerKWh = countries[country];
+          const cost = energyUsage * pricePerKWh;
+          console.log(`Electricity cost: ${cost.toFixed(2)}`);
+      }
+  </script>
+</body>
+</html>
